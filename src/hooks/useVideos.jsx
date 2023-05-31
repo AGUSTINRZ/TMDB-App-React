@@ -11,7 +11,6 @@ function useVideos(id) {
 			);
 			const json = await response.json();
 			setData(json);
-			console.log(json);
 		}
 			getData();
 	}, [id]);

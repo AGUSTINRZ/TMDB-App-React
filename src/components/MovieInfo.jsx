@@ -3,8 +3,9 @@ import MovieCast from "./MovieCast";
 import { IMG_BASE_URL } from "../services/api_endpoints";
 import MovieImages from "./MovieImages";
 import MovieVideos from "./MovieVideos";
+import SimilarMovies from "./SimilarMovies";
 
-function MovieInfo({ movieData }) {
+function MovieInfo({ movieData, setId, setPageContext }) {
 	return (
 		<>
 			{movieData && (
@@ -58,6 +59,7 @@ function MovieInfo({ movieData }) {
 					</section>
 					<MovieImages id={movieData.id} />
 					<MovieVideos id={movieData.id} />
+					<SimilarMovies id={movieData.id} setId={setId} setPageContext={setPageContext} />
 				</section>
 			)}
 		</>
@@ -66,6 +68,8 @@ function MovieInfo({ movieData }) {
 
 MovieInfo.propTypes = {
 	movieData: PropTypes.object,
+	setId: PropTypes.func,
+	setPageContext: PropTypes.func
 };
 
 export default MovieInfo;

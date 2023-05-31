@@ -26,7 +26,7 @@ function App() {
 			<main className="bg-black font-noto-sans">
 				{showNewContent ? (
 					<>
-						<MovieSection id={id} pageContext={showNewContent}/>
+						<MovieSection id={id} setId={setId} pageContext={showNewContent} setPageContex={setShowNewContent} />
 					</>
 				) : (
 					<>

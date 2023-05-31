@@ -5,7 +5,7 @@ import Spinner from "./Spinner";
 import MovieMainHeader from "./MovieMainHeader";
 import MovieInfo from "./MovieInfo";
 
-function MovieSection({ id, pageContext }) {
+function MovieSection({ id, setId, pageContext, setPageContext }) {
 	const [movieData, setMovieData] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -28,7 +28,7 @@ function MovieSection({ id, pageContext }) {
 			{movieData && !isLoading ? (
 				<>
 					<MovieMainHeader movieData={movieData} />
-          <MovieInfo movieData={movieData}/>
+          <MovieInfo movieData={movieData} setId={setId} setPageContext={setPageContext} />
 				</>
 			) : isLoading ? (
 				<section className="flex justify-center items-center w-screen h-screen bg-stone-900 text-primary-color">
@@ -41,7 +41,9 @@ function MovieSection({ id, pageContext }) {
 
 MovieSection.propTypes = {
 	id: PropTypes.number,
+	setId: PropTypes.func,
 	pageContext: PropTypes.bool,
+	setPageContext: PropTypes.func
 };
 
 export default MovieSection;
