@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import MovieCast from "./MovieCast";
 import { IMG_BASE_URL } from "../services/api_endpoints";
 import MovieImages from "./MovieImages";
+import MovieVideos from "./MovieVideos";
 
 function MovieInfo({ movieData }) {
 	return (
@@ -55,7 +56,8 @@ function MovieInfo({ movieData }) {
 							</div>
 						</div>
 					</section>
-					<MovieImages id={movieData.id}/>
+					<MovieImages id={movieData.id} />
+					<MovieVideos id={movieData.id} />
 				</section>
 			)}
 		</>

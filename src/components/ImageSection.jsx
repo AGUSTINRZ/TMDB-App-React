@@ -26,7 +26,11 @@ function ImageSection({ images }) {
 						className="max-h-[24rem] object-cover rounded"
 					/>
 				)) : <p>No images available</p>}
-        <button onClick={handleClick} className="bg-primary-color px-12 rounded text-2xl ml-auto">
+        <button onClick={handleClick} className={`${
+								limit >= images.length
+									? "bg-neutral-300 cursor-default"
+									: "bg-primary-color cursor-pointer"
+							} px-8 md:px-12 rounded text-2xl ml-auto`}>
           <FontAwesomeIcon icon={faPlus} />
         </button>
 		</section>
