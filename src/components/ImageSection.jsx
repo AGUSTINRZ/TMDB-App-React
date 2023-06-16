@@ -23,6 +23,7 @@ function ImageSection({ images }) {
 						key={image.file_path}
 						src={`${IMG_BASE_URL}original${image.file_path}`}
 						alt=""
+						loading="lazy"
 						className="max-h-[24rem] object-cover rounded"
 					/>
 				)) : <p>No images available</p>}
